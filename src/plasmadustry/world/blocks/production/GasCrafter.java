@@ -1,4 +1,4 @@
-package plasmadustry.worlds.blocks.production
+package plasmadustry.worlds.blocks.production;
 
 import arc.*;
 import mindustry.graphics.*;

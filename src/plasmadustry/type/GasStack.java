@@ -61,7 +61,7 @@ public class GasStack implements Comparable<GasStack>{
     }
 
     @Override
-    public int compareTo(GasStack GasStack){
+    public int compareTo(GasStack gasStack){
         return gas.compareTo(GasStack.gas);
     }
 

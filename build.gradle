@@ -86,3 +86,27 @@ tasks.withType(JavaCompile){
         options.compilerArgs = options.compilerArgs.findAll{it != '--enable-preview' }
     }
 }
+
+// Jabel
+dependencies {
+    annotationProcessor 'com.github.bsideup.jabel:jabel-javac-plugin:0.3.0'
+}
+
+// Add more tasks if needed, such as compileTestJava
+configure([tasks.compileJava]) {
+    sourceCompatibility = 14 // for the IDE support
+
+    options.compilerArgs = [
+            "--release", "8",
+            '--enable-preview',
+    ]
+
+    doFirst {
+        // Can be omitted on Java 14 and higher
+        options.compilerArgs << '-Xplugin:jabel'
+
+        options.compilerArgs = options.compilerArgs.findAll {
+            it != '--enable-preview'
+        }
+    }
+}

@@ -19,7 +19,7 @@ dependencies {
 }
 
 jar {
-    archiveFileName.set pArtifactFilename
+    archiveFileName.set "plasmadustryArtifact.jar"
 }
 
 task dexify(type: Jar) {
